@@ -4,16 +4,17 @@
 #SBATCH --time={walltime}        # walltime
 #SBATCH --cpus-per-task={cpt}    # number of processor cores (i.e. tasks)
 #SBATCH --partition={partition}
+#SBATCH --exclusive
 
 # Good Idea to stop operation on first error.
 set -e
 
 # Load environment modules for your application here.
 
-eval "$(conda shell.bash hook)"
+eval "$(pyenv shell.bash hook)"
 
-conda deactivate
-conda activate mapf
+pyenv deactivate
+pyenv activate coom
 
 
 # Run jobs
